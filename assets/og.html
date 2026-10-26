@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Cormorant+Garamond:ital,wght@1,500&family=Major+Mono+Display&display=swap">
+<style>
+html,body{margin:0;width:1200px;height:630px;background:#0b0e16;overflow:hidden}
+body{position:relative;font-family:"Fraunces",Georgia,serif;color:#efe8da}
+.glow{position:absolute;inset:0;background:radial-gradient(45% 70% at 78% 70%,rgba(242,176,74,.22),transparent 70%),radial-gradient(40% 50% at 90% 20%,rgba(127,209,176,.10),transparent 70%)}
+canvas{position:absolute;right:0;top:0}
+.t{position:absolute;left:72px;top:150px;width:720px}
+.k{font-family:"Major Mono Display",monospace;color:#f2b04a;font-size:19px;letter-spacing:.06em;white-space:nowrap}
+h1{margin:22px 0 0;font-weight:900;font-size:104px;line-height:.9;letter-spacing:-.03em;font-variation-settings:"opsz" 144,"WONK" 1}
+h1 em{font-weight:300;color:#f2b04a;font-variation-settings:"opsz" 144,"SOFT" 100}
+p{margin:30px 0 0;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:36px;line-height:1.2;color:#efe8da;max-width:620px}
+.b{position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#e7c47c,transparent)}
+</style></head><body><div class="glow"></div><canvas id="c" width="560" height="630"></canvas>
+<div class="t"><div class="k">full-stack engineer · remote, worldwide</div><h1>Bamidele<br><em>Musibau</em></h1><p>Websites, custom software and security checks, built one branch at a time.</p></div><div class="b"></div>
+<script>
+const g=document.getElementById('c').getContext('2d');let s=7;const r=()=>((s=(s*9301+49297)%233280)/233280);
+g.lineCap='round';
+(function br(x,y,a,l,d){const x2=x+Math.cos(a)*l,y2=y+Math.sin(a)*l;const k=d/7;
+g.strokeStyle=`rgba(${Math.round(242-115*k)},${Math.round(176+33*k)},${Math.round(74+102*k)},${.95-k*.3})`;g.lineWidth=Math.max(1,14-d*2);g.beginPath();g.moveTo(x,y);g.lineTo(x2,y2);g.stroke();
+if(d<7){const n=d<2?3:2;for(let i=0;i<n;i++)br(x2,y2,a+(r()-.5)*1.1+(i-(n-1)/2)*.55,l*(.7+r()*.1),d+1)}else{const gr=g.createRadialGradient(x2,y2,0,x2,y2,14);gr.addColorStop(0,'rgba(127,209,176,.9)');gr.addColorStop(1,'rgba(127,209,176,0)');g.fillStyle=gr;g.beginPath();g.arc(x2,y2,14,0,7);g.fill()}})(300,600,-Math.PI/2,128,0);
+const h=g.createRadialGradient(300,600,0,300,600,90);h.addColorStop(0,'rgba(255,226,160,.95)');h.addColorStop(.3,'rgba(242,176,74,.4)');h.addColorStop(1,'rgba(242,176,74,0)');g.fillStyle=h;g.beginPath();g.arc(300,600,90,0,7);g.fill();
+</script></body></html>

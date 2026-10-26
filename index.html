@@ -129,7 +129,7 @@ a { color: var(--sap); }
 .bigyear[data-x="left"] { right: auto; left: max(16px, env(safe-area-inset-left, 0px)); }
 .bigyear[data-y="bottom"] { top: auto; bottom: 8vh; }
 @media (max-width: 760px) {
-  .chapter, .chapter.p-tl, .chapter.p-tr, .chapter.p-br, .chapter.p-bc { top: auto; right: auto; left: max(16px, env(safe-area-inset-left, 0px)); margin: 0; text-align: left; justify-items: start; }
+  .chapter, .chapter.p-tl, .chapter.p-tr, .chapter.p-br, .chapter.p-bc { top: auto; bottom: calc(6vh + env(safe-area-inset-bottom, 0px)); right: auto; left: max(16px, env(safe-area-inset-left, 0px)); margin: 0; text-align: left; justify-items: start; }
   .chapter.p-tr .voice, .chapter.p-br .voice { justify-self: start; }
   .bigyear[data-y="bottom"] { top: 11vh; bottom: auto; }
   .chapter { bottom: calc(6vh + env(safe-area-inset-bottom, 0px)); padding: 18px 0 0; }
@@ -242,6 +242,19 @@ a { color: var(--sap); }
 .after h2 em { font-style: italic; font-weight: 300; color: var(--sap); font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
 .kicker { font-family: var(--f-label) !important; letter-spacing: .1em !important; text-transform: none !important; }
 .hud .who { font-family: var(--f-display) !important; font-style: italic; font-weight: 700 !important; letter-spacing: 0 !important; font-size: 1.05rem !important; }
+/* ---------- FAQ ---------- */
+.faq-list { display: grid; border-top: 1px solid rgba(231,196,124,.2); }
+.faq details { border-bottom: 1px solid rgba(231,196,124,.2); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 4px;
+  font-family: var(--f-display); font-weight: 500; font-size: clamp(1.25rem, 2.4vw, 1.9rem); letter-spacing: -.01em; font-variation-settings: "opsz" 72, "SOFT" 50;
+  transition: color .35s, padding-left .45s cubic-bezier(.2,.8,.2,1); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-hud); font-size: 1.1rem;
+  color: #e7c47c; border: 1px solid rgba(231,196,124,.35); transition: transform .45s cubic-bezier(.2,.8,.2,1.4), background .35s, color .35s; }
+.faq summary:hover { color: #f3d48f; padding-left: 12px; }
+.faq details[open] summary { color: #f3d48f; font-style: italic; }
+.faq details[open] summary::after { transform: rotate(45deg); background: #e7c47c; color: var(--ink); }
+.faq details p { margin: 0; padding: 0 4px 28px; max-width: 62ch; font-size: 1.25rem; line-height: 1.5; color: var(--paper); animation: fade .5s both; }
 /* ---------- the sweet spot: contact ---------- */
 .sweet { position: relative; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
   padding-block: 110px 60px; overflow: hidden;
@@ -342,6 +355,40 @@ footer { max-width: 1080px; margin: 0 auto; padding-block: 50px 40px; font-famil
   .chapter h2 .w { transition: color .3s; transform: none; opacity: 1; filter: none; }
   .card { transform: none !important; }
 }
+
+/* ---------- phones: everything a step larger, small mono labels most of all ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (max-width: 760px) {
+  html { font-size: 18px; }
+  .hud { font-size: .85rem; }
+  .hud .who { font-size: 1rem !important; white-space: nowrap; }
+  .btn { font-size: .86rem; padding: 10px 15px; }
+  .intro .meta, .chapter .tag, .kicker, .card .where, .quests legend, .pill-label, .st-hint { font-size: .9rem !important; letter-spacing: .03em !important; }
+  .intro p { font-size: 1.5rem; }
+  .chapter h2 { font-size: clamp(2.4rem, 11vw, 3.4rem); }
+  .chapter .voice { font-size: 1.5rem; line-height: 1.3; }
+  .tip { font-size: .88rem; padding: 4px 10px; }
+  .after .lede { font-size: 1.45rem; }
+  .card p { font-size: 1.22rem; }
+  .card .via { font-size: 1.12rem; }
+  .card .result { font-size: 1.2rem; }
+  .card h3 { font-size: 1.9rem; }
+  .chip, .st-label { font-size: .88rem; }
+  .inv .yr { font-size: .9rem; }
+  .faq summary { font-size: 1.4rem; padding-block: 22px; }
+  .faq details p { font-size: 1.22rem; }
+  .quest-opt b { font-size: 1.35rem; }
+  .quest-opt small { font-size: 1.08rem; }
+  .answer { font-size: 1.28rem; }
+  .field input, .field textarea { font-size: 1.35rem; }
+  .field span { font-size: 1.3rem; }
+  .pill span { font-size: .92rem; padding: 10px 16px; }
+  .form-error { font-size: .9rem; }
+  .plant { font-size: 1.4rem; }
+  .ready pre { font-size: .88rem; }
+  .avail, .direct-row { font-size: .9rem; }
+  footer { font-size: .86rem; }
+}
 </style>
 
 <canvas id="stage" aria-hidden="true"></canvas>
@@ -411,6 +458,19 @@ footer { max-width: 1080px; margin: 0 auto; padding-block: 50px 40px; font-famil
     <div class="inv-wrap" id="invWrap" hidden><div class="inv" id="inv"></div></div>
   </section>
 
+  <section class="wrap faq" id="faq" aria-labelledby="t-faq">
+    <span class="kicker">Before you ask</span>
+    <h2 id="t-faq">Questions, <em>answered.</em></h2>
+    <div class="faq-list">
+      <details><summary>Do you work with small businesses?</summary><p>Yes. Most of my clients are small and growing businesses: training firms, consultancies, construction and service companies. Every project gets a fixed price agreed before any work starts.</p></details>
+      <details><summary>How long does a website take?</summary><p>Usually 7 to 10 days from the first call to a live site, for a typical small-business website with online booking.</p></details>
+      <details><summary>Can you work with me if I'm in another time zone?</summary><p>Yes. I work remotely, overlap with US, UK and EU business hours, and reply within one working day.</p></details>
+      <details><summary>What kind of custom software do you build?</summary><p>Tools that replace spreadsheets, forms and manual processes: client portals, dashboards, data pipelines and internal apps, built with Next.js, Node.js, Python and Supabase.</p></details>
+      <details><summary>What is included in a security check?</summary><p>A review of your website or codebase against common attack paths such as exposed keys, injection and broken access control, with a plain-English report and fixes ranked by risk.</p></details>
+      <details><summary>How do payments work?</summary><p>A fixed price agreed up front, with 50% to start and the rest on delivery.</p></details>
+    </div>
+  </section>
+
   <section class="sweet" id="player2" aria-labelledby="t-p2">
     <div class="sweet-in">
       <div class="sweet-head">
@@ -473,7 +533,7 @@ footer { max-width: 1080px; margin: 0 auto; padding-block: 50px 40px; font-famil
     </div>
   </section>
 
-  <footer><span>© 2026 Bamidele Musibau · Inflimity</span><span>Grown one branch at a time. Working across US, UK and EU hours.</span></footer>
+  <footer><span>© 2026 Bamidele Musibau, also known as Inflimity</span><span>Grown one branch at a time. Working across US, UK and EU hours.</span></footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -482,7 +542,7 @@ footer { max-width: 1080px; margin: 0 auto; padding-block: 50px 40px; font-famil
 /* ================= the story ================= */
 const LEVELS = [
   { yr: "2019", tag: "Level 1 · 2019 · Inflimity", title: "The first commit",
-    voice: "2019. Before the titles and the teams, there was a name, Inflimity, and a quiet promise to build things properly.",
+    voice: "2019. Before the titles and the teams, there was a nickname, Inflimity, and a quiet promise to build things properly.",
     facts: ["An independent practice under the Inflimity name, 2019 to 2023", "Every client won through referral and reputation", "More than fifty websites and internal tools delivered"],
     skills: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap"] },
   { yr: "2021", tag: "Level 2 · 2021 · Oduduwa University", title: "The training arc",
@@ -521,7 +581,7 @@ const N = LEVELS.length;
 
 /* ---- page content built from the same data, so the two never drift ---- */
 const grid = document.getElementById("levelsGrid"), inv = document.getElementById("inv");
-LEVELS.forEach((L, li) => {
+if (!grid.children.length) LEVELS.forEach((L, li) => {
   const c = document.createElement("article"); c.className = "card";
   c.innerHTML = `<span class="num" aria-hidden="true">${li + 1}</span><span class="where">${L.tag}</span><h3>${L.title}</h3><p>${L.voice}</p><p class="via">${L.facts.join(" · ")}</p>`;
   grid.append(c);

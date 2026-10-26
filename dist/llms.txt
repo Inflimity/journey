@@ -1,0 +1,43 @@
+# Bamidele Musibau (Inflimity)
+
+> Full-stack engineer, also known by his nickname Inflimity, building under that name since 2019. Builds websites, custom software and security checks for small and growing businesses, remotely, for clients in the US, UK, Canada and Europe.
+
+## Services
+- Website design and development: fast, mobile-first sites with online booking, usually live in 7 to 10 days.
+- Custom software: client portals, dashboards, data pipelines and internal apps that replace spreadsheets and manual processes.
+- Security checks: review of a website or codebase against common attack paths, with a plain-English report and fixes ranked by risk.
+
+## Experience
+- Independent practice (Inflimity), 2019 to 2023: more than fifty websites and internal tools delivered.
+- B.Eng Computer Engineering, Oduduwa University, 2021 to 2025.
+- OurPass, 2023: onsite engineer for POS payment terminals.
+- Globus Bank, 2024: internship.
+- LISH Consulting, 2025: Head of Technology, team of 10; API gateway connecting government websites and systems.
+- Teaching data analysis and data science since December 2025.
+
+## Selected client work
+- ALZ Trust Limited: website for a corporate training firm whose clients include Coca-Cola, Nestlé, Guinness, First Bank and Dangote.
+- McBeverly Hills Consulting: website for a learning and development firm.
+- Glo Concept: corporate services platform.
+- RHQ Services (Alberta, Canada): website for a heavy construction and mining company.
+- TD Partners (Canada): client website.
+
+## Products
+- Canary: open-source benchmark testing AI coding agents on unseen bugs (90% on textbook bugs, 0% on real ones).
+- Vultix: security SaaS (built the backend).
+- Pathfinder: career roadmap platform (built the frontend).
+- Analyser: spreadsheet profiler that runs entirely on the user's machine.
+- SportCrawl: real-time sports data pipeline.
+
+## FAQ
+- **Do you work with small businesses?** Yes. Most of my clients are small and growing businesses: training firms, consultancies, construction and service companies. Every project gets a fixed price agreed before any work starts.
+- **How long does a website take?** Usually 7 to 10 days from the first call to a live site, for a typical small-business website with online booking.
+- **Can you work with me if I'm in another time zone?** Yes. I work remotely, overlap with US, UK and EU business hours, and reply within one working day.
+- **What kind of custom software do you build?** Tools that replace spreadsheets, forms and manual processes: client portals, dashboards, data pipelines and internal apps, built with Next.js, Node.js, Python and Supabase.
+- **What is included in a security check?** A review of your website or codebase against common attack paths such as exposed keys, injection and broken access control, with a plain-English report and fixes ranked by risk.
+- **How do payments work?** A fixed price agreed up front, with 50% to start and the rest on delivery.
+
+## Contact
+- Email: bamideleminerva@gmail.com
+- GitHub: https://github.com/Inflimity
+- Website: https://YOUR-DOMAIN.com/
